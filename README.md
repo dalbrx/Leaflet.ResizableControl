@@ -6,8 +6,8 @@ A Resizable and Scrollable Leaflet Control Panel.
 
 Download the [production version][min] or the [development version][max].
 
-[min]: https://github.com/dalbrx/Leaflet.ResizableControl/master/dist/Leaflet.ResizableControl.min.js
-[max]: https://github.com/dalbrx/Leaflet.ResizableControl/master/dist/Leaflet.ResizableControl.js
+[min]: https://github.com/dalbrx/Leaflet.ResizableControl/blob/master/dist/Leaflet.ResizableControl.min.js
+[max]: https://github.com/dalbrx/Leaflet.ResizableControl/blob/master/dist/Leaflet.ResizableControl.js
 
 In your web page:
 
