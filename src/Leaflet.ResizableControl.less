@@ -1,0 +1,96 @@
+.resizable-control-container {
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px !important; /*override leaflet */
+  border: thin solid;
+  transition: height 500ms, width 500ms;
+  position: relative;
+  padding: 20px 10px 10px 10px;
+  display: none;
+  min-height: 45px;
+
+  .ui-resizable-handle {
+      height: 25px;
+      width: 25px;
+  }
+
+  .btn {
+      background: rgba(255, 255, 255, 0);
+      position: absolute;
+  }
+
+  .resizable-control-button-resize-full {
+       top: 0;
+       right: 20px;
+       padding: 0 5px;
+  }
+
+  .resizable-control-button-resize-small {
+       top: 0px;
+       right: 40px;
+       padding: 0 5px;
+  }
+
+   .resizable-control-button-stats {
+     top: 20px;
+     right: 40px;
+     padding: 0 5px;
+     font-size: 1.4em;
+     z-index: 10;
+   }
+
+  .resizable-control-button-resize {
+       top: 0;
+       right: 0;
+       -moz-transform: rotate(270deg);
+       -ms-transform: rotate(270deg);
+       -o-transform: rotate(270deg);
+       -webkit-transform: rotate(270deg);
+       transform: rotate(270deg);
+       padding: 0 0;
+  }
+
+  .btn:hover {
+      color: grey;
+  }
+
+  .btn:focus {
+      color: inherit;
+  }
+
+   .resizable-control-scrollpane {
+        padding: 0 20px;
+        height: 100%;
+
+        .jspContainer {
+            .jspVerticalBar {
+                width: 10px
+            }
+
+            .jspHorizontalBar {
+                display: none;
+            }
+        }
+
+        .resizable-control-content {
+            .info-panel-content {
+                margin-top: 20px;
+                img {
+                    margin-left: 5px;
+                    float: right;
+                }
+            }
+
+            .info-panel-heading {
+                h5 {
+                    margin-top: 0;
+                }
+            }
+        }
+   }
+
+}
+
+.ui-resizable-ne {
+    top: 0;
+    height: 10px
+}
