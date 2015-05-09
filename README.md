@@ -6,8 +6,8 @@ A Resizable and Scrollable Leaflet Control Panel.
 
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/waihti/test/master/dist/test.min.js
-[max]: https://raw.github.com/waihti/test/master/dist/test.js
+[min]: https://github.com/dalbrx/Leaflet.ResizableControl/master/dist/Leaflet.ResizableControl.min.js
+[max]: https://github.com/dalbrx/Leaflet.ResizableControl/master/dist/Leaflet.ResizableControl.js
 
 In your web page:
 
@@ -38,8 +38,6 @@ Include the dependencies
 
     </script>
 ```
-
-In your code, you can attach test's methods to any object.
 
 ## Documentation
 _(Coming soon)_

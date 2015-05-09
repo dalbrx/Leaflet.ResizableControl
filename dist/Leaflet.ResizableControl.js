@@ -1,5 +1,5 @@
 /*! Leaflet.ResizableControl - v1.0.0 - 2015-05-09
-* https://github.com/waihti/test
+* https://github.com/dalbrx/Leaflet.ResizableControl
 * Copyright (c) 2015 David Albrecht; Licensed MIT */
 (function (factory, window) {
 
