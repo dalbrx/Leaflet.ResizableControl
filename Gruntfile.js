@@ -69,7 +69,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           // includes files within path
-          {expand: true, src: ['src/*.js'], dest: 'dist/', filter: 'isFile'}
+          {expand: false, src: ['src/*.js'], dest: 'dist/', filter: 'isFile'}
           ]
       }
     }
@@ -81,9 +81,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less', 'copy']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less']);
 
 };
