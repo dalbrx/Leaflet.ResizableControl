@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Leaflet Resizable Control</title>
+    <link rel="stylesheet" href="../lib/jquery.jscrollpane.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />
+    <link rel="stylesheet" href="../dist/Leaflet.ResizableControl.css" />
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
+
+    <script src="../lib/jquery.jscrollpane.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+    <script src="../dist/Leaflet.ResizableControl.js"></script>
+
+    <div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+
+    <script>
+
+		var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+			}),
+			latlng = L.latLng(-37.82, 175.24);
+
+		var map = L.map('map', {center: latlng, zoom: 13, layers: [tiles]});
+
+        var html = "<div><b>Resizable Control</h5></b><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut</p>";
+
+		var resizablebottomright = L.ResizableControl({
+            position: 'bottomright',
+            minimizedHeight: 60,
+            minimizedWidth: 0.1,
+            enlargedHeight: 0.6,
+            enlargedWidth: 0.4,
+            enlargeCallback: function(e) {},
+            minimizeCallback: function(e) {},
+            contentClassName: "resizable-control-content",
+            scrollPaneClassName: "resizable-control-scrollpane",
+            className: "resizable-control-container",
+            jscrollpane: true,
+            appendOnAdd: function(divElement) {}
+        });
+		map.addControl(resizablebottomright);
+		resizablebottomright.setContent(html);
+
+		var resizablebottomleft = L.ResizableControl({
+            position: 'bottomleft',
+            minimizedHeight: 60,
+            minimizedWidth: 0.1,
+            enlargedHeight: 0.6,
+            enlargedWidth: 0.4,
+            enlargeCallback: function(e) {},
+            minimizeCallback: function(e) {},
+            contentClassName: "resizable-control-content",
+            scrollPaneClassName: "resizable-control-scrollpane",
+            className: "resizable-control-container",
+            jscrollpane: true,
+            appendOnAdd: function(divElement) {}
+        });
+		map.addControl(resizablebottomleft);
+		resizablebottomleft.setContent(html);
+
+		var resizabletopright = L.ResizableControl({
+            position: 'topright',
+            minimizedHeight: 60,
+            minimizedWidth: 0.1,
+            enlargedHeight: 0.6,
+            enlargedWidth: 0.4,
+            enlargeCallback: function(e) {},
+            minimizeCallback: function(e) {},
+            contentClassName: "resizable-control-content",
+            scrollPaneClassName: "resizable-control-scrollpane",
+            className: "resizable-control-container",
+            jscrollpane: true,
+            appendOnAdd: function(divElement) {}
+        });
+		map.addControl(resizabletopright);
+		resizabletopright.setContent(html);
+
+		var resizabletopleft = L.ResizableControl({
+            position: 'topleft',
+            minimizedHeight: 60,
+            minimizedWidth: 0.1,
+            enlargedHeight: 0.6,
+            enlargedWidth: 0.4,
+            enlargeCallback: function(e) {},
+            minimizeCallback: function(e) {},
+            contentClassName: "resizable-control-content",
+            scrollPaneClassName: "resizable-control-scrollpane",
+            className: "resizable-control-container",
+            jscrollpane: true,
+            appendOnAdd: function(divElement) {}
+        });
+		map.addControl(resizabletopleft);
+		resizabletopleft.setContent(html);
+
+    </script>
+  </body>
+</html>
+
