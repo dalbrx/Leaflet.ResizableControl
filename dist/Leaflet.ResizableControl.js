@@ -7,16 +7,20 @@
 		define([ 'leaflet', "jquery" ], factory );
 	} else if (typeof exports === 'object') {
         module.exports = factory(require('leaflet' ,'jquery'));
-    }
-
-    // attach your plugin to the global 'L' variable
-    if (typeof window !== 'undefined' && window.L) {
-        window.L.ResizableControl = factory(L, jQuery);
+    } else {
+         // Browser globals
+         if (typeof window.L === 'undefined') {
+             throw 'Leaflet must be loaded first';
+         }
+          if (typeof window.$ === 'undefined') {
+              throw 'jQuery must be loaded first';
+          }
+         factory(window.L, window.$);
     }
 
 }(function( L, $ ) {
 
-    var ResizableControl = L.Control.extend({
+    L.ResizableControl = L.Control.extend({
         options: {
             position: 'bottomleft',
             minimizedHeight: 55,
@@ -153,5 +157,5 @@
         }
 });
 
-        return function(options) { return new ResizableControl(options); };
+        return L.ResizableControl;
 }, window));
