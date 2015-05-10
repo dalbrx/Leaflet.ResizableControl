@@ -69,14 +69,23 @@
                 thisObj.options.minimizeCallback(e);
             });
 
+            var handle = function () {
+                if (thisObj.options.position === 'bottomleft') {
+                    return 'ne';
+                } else if (thisObj.options.position === 'topleft') {
+                    return 'se';
+                } else if (thisObj.options.position === 'bottomright') {
+                    return 'nw';
+                } else if (thisObj.options.position === 'topright') {
+                    return 'sw';
+                } else {
+                    return '';
+                }
+            };
 
-             this._buttonResize = L.DomUtil.create('div', 'ui-resizable-handle ui-resizable-ne', this._div);
-            //this._buttonResize = L.DomUtil.create('button', 'btn btn-sm resizable-control-button-resize', this._div);
+
+             this._buttonResize = L.DomUtil.create('div', 'ui-resizable-handle ui-resizable-' + handle(), this._div);
             L.DomUtil.create('span', 'ui-icon ui-icon-grip-diagonal-se', this._buttonResize);
-
-
-
-            /**<div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90; display: block;"></div>**/
 
             this.options.appendOnAdd(this._div);
 
@@ -86,7 +95,7 @@
             $(this._div).css('width', this.calcWidth(this.options.minimizedWidth));
 
             $(this._div).resizable({
-                handles: {'ne': '.ui-resizable-ne'},
+                handles: {'ne': '.ui-resizable-' + handle()},
                 resize: function( event, ui ) {
                     ui.position.left = 0;
                     ui.position.top = 0;
