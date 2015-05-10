@@ -69,8 +69,14 @@
                 thisObj.options.minimizeCallback(e);
             });
 
-            this._buttonResize = L.DomUtil.create('button', 'btn btn-sm resizable-control-button-resize', this._div);
+
+             this._buttonResize = L.DomUtil.create('div', 'ui-resizable-handle ui-resizable-ne', this._div);
+            //this._buttonResize = L.DomUtil.create('button', 'btn btn-sm resizable-control-button-resize', this._div);
             L.DomUtil.create('span', 'ui-icon ui-icon-grip-diagonal-se', this._buttonResize);
+
+
+
+            /**<div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90; display: block;"></div>**/
 
             this.options.appendOnAdd(this._div);
 
@@ -80,7 +86,7 @@
             $(this._div).css('width', this.calcWidth(this.options.minimizedWidth));
 
             $(this._div).resizable({
-                handles: 'ne',
+                handles: {'ne': '.ui-resizable-ne'},
                 resize: function( event, ui ) {
                     ui.position.left = 0;
                     ui.position.top = 0;

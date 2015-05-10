@@ -10,7 +10,6 @@
   min-height: 45px;
 }
 .resizable-control-container .ui-resizable-handle {
-  height: 25px;
   width: 25px;
 }
 .resizable-control-container .btn {
@@ -33,16 +32,6 @@
   padding: 0 5px;
   font-size: 1.4em;
   z-index: 10;
-}
-.resizable-control-container .resizable-control-button-resize {
-  top: 0;
-  right: 0;
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-  padding: 0 0;
 }
 .resizable-control-container .btn:hover {
   color: grey;
@@ -72,5 +61,11 @@
 }
 .ui-resizable-ne {
   top: 0;
-  height: 10px;
+  right: 0;
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  padding: 0 0;
 }
