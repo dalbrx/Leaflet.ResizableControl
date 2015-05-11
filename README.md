@@ -66,6 +66,7 @@ It's also possible to include Leaflet.ResizableControl.js as AMD module.
   * **contentClassName**: The class name of the Content Div inside the ScrollPane
   * **scrollPaneClassName**: The class name of the ScrollPane inside the container
   * **className**: The class name of the ResizableControl Container
+  * **jscrollpane**: true if JScrollPane should be used for scrollbars, false otherwise.
   * **appendOnAdd**: Callback function to append further elements to the container div.
 
 ## Examples
