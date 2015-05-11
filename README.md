@@ -31,7 +31,7 @@ Include the dependencies
 <script src="dist/Leaflet.ResizableControl.js"></script>
 <script>
             ...
-    		var resizableControl = L.ResizableControl({
+    		var resizableControl = new L.ResizableControl({
                 position: 'bottomleft',
                 minimizedHeight: 40,
                 minimizedWidth: 0.1,
