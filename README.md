@@ -50,6 +50,8 @@ Include the dependencies
 </script>
 ```
 
+### AMD
+
 It's also possible to include Leaflet.ResizableControl.js as AMD module.
 
 ## Documentation
@@ -57,10 +59,10 @@ It's also possible to include Leaflet.ResizableControl.js as AMD module.
 ### Options
 
   * **position**: The control position {bottomleft,bottomright, topleft,topright}
-  * **minimizedHeight**: The height of the Resizable Control when minimized in px (eg. 40 for 40px) or percent (eg. 0.2 for 20%)
-  * **minimizedWidth**: The with of the Resizable Control when minimized in px (eg. 40 for 40px) or percent (eg. 0.2 for 20%)
-  * **enlargedHeight**: The height of the Resizable Control when enlarged in px (eg. 300 for 300px) or percent (eg. 0.5 for 50%)
-  * **enlargedWidth**: The width of the Resizable Control when enlarged in px (eg. 300 for 300px) or percent (eg. 0.5 for 50%)
+  * **minimizedHeight**: The height of the Resizable Control when minimized in px (eg. 40 for 40px) or percent relative to the map container (eg. 0.2 for 20%)
+  * **minimizedWidth**: The with of the Resizable Control when minimized in px (eg. 40 for 40px) or percent relative to the map container (eg. 0.2 for 20%)
+  * **enlargedHeight**: The height of the Resizable Control when enlarged in px (eg. 300 for 300px) or percent relative to the map container (eg. 0.5 for 50%)
+  * **enlargedWidth**: The width of the Resizable Control when enlarged in px (eg. 300 for 300px) or percent relative to the map container (eg. 0.5 for 50%)
   * **enlargeCallback**: Callback function for enlarge events
   * **minimizeCallback**: Callback function for minimize events
   * **contentClassName**: The class name of the Content Div inside the ScrollPane
