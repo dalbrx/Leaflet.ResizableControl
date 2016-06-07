@@ -96,6 +96,7 @@
             L.DomEvent.on(this._div, 'mousewheel', L.DomEvent.stopPropagation);
             $(this._div).css('height', this.calcHeight(this.options.minimizedHeight));
             $(this._div).css('width', this.calcWidth(this.options.minimizedWidth));
+            this._enlarged = false;
 
             $(this._div).resizable({
                 handles: handle(),
