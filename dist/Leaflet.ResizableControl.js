@@ -1,6 +1,6 @@
-/*! Leaflet.ResizableControl - v1.0.0 - 2015-05-10
+/*! Leaflet.ResizableControl - v1.1.0 - 2016-06-08
 * https://github.com/dalbrx/Leaflet.ResizableControl
-* Copyright (c) 2015 David Albrecht; Licensed MIT */
+* Copyright (c) 2016 David Albrecht; Licensed MIT */
 (function (factory, window) {
 
 	if ( typeof define === "function" && define.amd ) {
@@ -33,7 +33,8 @@
             scrollPaneClassName: "resizable-control-scrollpane",
             className: "resizable-control-container",
             jscrollpane: true,
-            appendOnAdd: function(divElement) {}
+            appendOnAdd: function(divElement) {},
+            resizable: true
         },
         initialize: function (options) {
             L.Util.setOptions(this, options);
@@ -90,8 +91,10 @@
                 }
             };
 
-            this._buttonResize = L.DomUtil.create('div', 'ui-resizable-handle ui-resizable-' + Object.keys(handle())[0], this._div);
-            L.DomUtil.create('span', 'ui-icon ui-icon-grip-diagonal-se', this._buttonResize);
+            if (this.options.resizable) {
+                this._buttonResize = L.DomUtil.create('div', 'ui-resizable-handle ui-resizable-' + Object.keys(handle())[0], this._div);
+                L.DomUtil.create('span', 'ui-icon ui-icon-grip-diagonal-se', this._buttonResize);
+            }
 
             this.options.appendOnAdd(this._div);
 
@@ -100,19 +103,21 @@
             $(this._div).css('height', this.calcHeight(this.options.minimizedHeight));
             $(this._div).css('width', this.calcWidth(this.options.minimizedWidth));
 
-            $(this._div).resizable({
-                handles: handle(),
-                resize: function( event, ui ) {
-                    ui.position.left = 0;
-                    ui.position.top = 0;
-                },
-                start: function(event, ui) {
-                    $(thisObj._scrollPaneDiv).css('visibility', 'hidden');
-                },
-                stop: function(event, ui) {
-                    thisObj.reinitializeScroll();
-                }
-            });
+            if (this.options.resizable) {
+                $(this._div).resizable({
+                    handles: handle(),
+                    resize: function( event, ui ) {
+                        ui.position.left = 0;
+                        ui.position.top = 0;
+                    },
+                    start: function(event, ui) {
+                        $(thisObj._scrollPaneDiv).css('visibility', 'hidden');
+                    },
+                    stop: function(event, ui) {
+                        thisObj.reinitializeScroll();
+                    }
+                });
+            }
 
             return this._div;
         },
