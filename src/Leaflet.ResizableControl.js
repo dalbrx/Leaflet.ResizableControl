@@ -99,6 +99,7 @@
             L.DomEvent.on(this._div, 'mousewheel', L.DomEvent.stopPropagation);
             $(this._div).css('height', this.calcHeight(this.options.minimizedHeight));
             $(this._div).css('width', this.calcWidth(this.options.minimizedWidth));
+            this._enlarged = false;
 
             if (this.options.resizable) {
                 $(this._div).resizable({
@@ -122,12 +123,14 @@
             $(this._scrollPaneDiv).css('visibility', 'hidden');
             $(this._div).css('height', this.calcHeight(this.options.enlargedHeight));
             $(this._div).css('width', this.calcWidth(this.options.enlargedWidth));
+            this._enlarged = true;
             this.reinitializeScroll();
         },
         collapse: function() {
             $(this._scrollPaneDiv).css('visibility', 'hidden');
             $(this._div).css('height', this.calcHeight(this.options.minimizedHeight));
             $(this._div).css('width', this.calcWidth(this.options.minimizedWidth));
+            this._enlarged = false;
             this.reinitializeScroll();
         },
         isEnlarged: function() { return this._enlarged; },
