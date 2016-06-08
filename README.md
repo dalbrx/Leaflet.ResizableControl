@@ -70,6 +70,7 @@ It's also possible to include Leaflet.ResizableControl.js as AMD module.
   * **className**: The class name of the ResizableControl Container
   * **jscrollpane**: true if JScrollPane should be used for scrollbars, false otherwise.
   * **appendOnAdd**: Callback function to append further elements to the container div.
+  * **resizable**: true if resize handle should be shown, false otherwise. defaults to true.
 
 ## Examples
   [Basic][ghpage]
